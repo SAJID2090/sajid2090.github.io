@@ -1,0 +1,80 @@
+/* Sajid Wazir personal website */
+:root{
+  --bg:#0a0a0a; --bg2:#141414; --ink:#ececec; --muted:#a9a9a9;
+  --cyan:#1ee3e0; --line:#cfcfcf;
+  --head:"Roboto Condensed","Roboto",Arial,sans-serif;
+  --body:"Roboto",Arial,sans-serif;
+  --cap:"Times New Roman",Times,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#151515 0%,var(--bg) 40%,#000 100%);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;letter-spacing:.04em}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
+/* Banner */
+#header_text{background:#2a1e2d url("../images/banner.jpg") center/cover no-repeat;text-align:center;padding:5.5rem max(16px,env(safe-area-inset-right,0px)) 4.5rem max(16px,env(safe-area-inset-left,0px))}
+#header_text h1{margin:0;font-family:var(--head);font-weight:700;font-size:clamp(2rem,5vw,3.6rem);line-height:1.1;color:#fff;letter-spacing:0;text-shadow:0 2px 6px rgba(0,0,0,.85),0 0 2px #000}
+#header_text p{text-align:center;margin:.7rem 0 0;font-size:clamp(1rem,1.8vw,1.3rem);color:#fff;letter-spacing:.12em;text-shadow:0 1px 4px rgba(0,0,0,.9)}
+
+/* Navigation */
+nav.main{background:#000;border-bottom:3px double var(--line);padding:1rem max(16px,env(safe-area-inset-right,0px)) 1rem max(16px,env(safe-area-inset-left,0px))}
+nav.main ul,nav.foot ul{list-style:none;margin:0 auto;padding:0;display:flex;flex-wrap:wrap;justify-content:space-evenly;gap:.7rem;max-width:1500px}
+nav.main a,nav.foot a{display:inline-block;color:var(--cyan);border:2px solid var(--cyan);border-radius:999px;padding:.12rem .7rem;font-size:1.1rem;letter-spacing:.03em;box-shadow:0 0 0 1px #00000080 inset}
+nav.main a:hover,nav.foot a:hover,nav.main a.active,nav.foot a.active{background:var(--cyan);color:#000;text-decoration:none}
+
+/* Content */
+main{max-width:1640px;margin:0 auto;padding:1.5rem max(16px,env(safe-area-inset-right,0px)) 3rem max(16px,env(safe-area-inset-left,0px))}
+.row{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:4rem;align-items:start;padding-inline:clamp(0px,8vw,190px)}
+@media (max-width:900px){.row{grid-template-columns:1fr;gap:2rem;padding-inline:0}.row .photo{order:-1;max-width:380px}}
+.full{padding-inline:clamp(0px,8vw,190px)}
+h2{font-family:var(--head);font-weight:700;font-size:2.4rem;line-height:1.15;margin:1.6rem 0 1rem;letter-spacing:0;text-transform:capitalize}
+h2::first-letter{font-family:var(--cap);color:var(--cyan);font-size:3.4rem;font-weight:700}
+h3{font-family:var(--head);font-weight:700;font-size:1.65rem;line-height:1.25;margin:1.6rem 0 .8rem;letter-spacing:0;text-transform:capitalize}
+p{margin:0 0 1rem;text-align:justify}
+ul.list{margin:0 0 1rem;padding-left:3rem}
+ul.list li{margin:.25rem 0}
+em a,a em{font-style:italic}
+.photo img{display:block;width:100%;border-bottom-left-radius:22%;margin-top:1.4rem}
+.small{color:var(--muted);font-size:.95rem}
+
+/* Timeline entries */
+.entry{border-left:2px solid var(--cyan);padding:.2rem 0 .2rem 1.2rem;margin:0 0 1.6rem}
+.entry h3{margin:0 0 .2rem;font-size:1.35rem}
+.entry .meta{color:var(--muted);font-size:.95rem;margin-bottom:.5rem}
+
+/* Table */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{border-bottom:1px solid #333;padding:.6rem .8rem;text-align:left;vertical-align:top}
+th{color:var(--cyan);font-weight:500}
+
+/* Highlights carousel */
+.slideshow{position:relative;max-width:900px;margin:1rem auto 2rem}
+.slide{display:none;text-align:center}
+.slide.show{display:block}
+.slide .num{color:var(--ink);font-size:.85rem;text-align:left;padding:.3rem .2rem}
+.card{background:#000 url("../images/banner.jpg") center/cover;border-radius:10px;overflow:hidden}
+.card .inner{background:rgba(0,0,0,.72);padding:2.6rem 2rem;min-height:250px;display:flex;flex-direction:column;justify-content:center;gap:.6rem}
+.card .tag{color:var(--cyan);letter-spacing:.15em;text-transform:uppercase;font-size:.85rem}
+.card .title{font-family:var(--head);font-weight:700;font-size:1.8rem;line-height:1.2;color:#fff}
+.card .txt{margin:0;text-align:center;color:#ddd}
+.prev,.next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.4);border:none;color:#fff;font-size:1.6rem;padding:.6rem .9rem;cursor:pointer;border-radius:4px}
+.prev{left:0}.next{right:0}
+.prev:hover,.next:hover{background:var(--cyan);color:#000}
+
+/* Profile icons */
+hr.sep{border:0;border-top:3px double var(--line);margin:2rem 0}
+.icons{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem;padding:0;margin:1rem 0 2rem}
+.icons a{display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:#fff;color:#0a66c2;font-weight:700;font-family:var(--head);font-size:1.15rem;letter-spacing:0}
+.icons a:hover{text-decoration:none;box-shadow:0 0 0 3px var(--cyan)}
+.icons svg{width:30px;height:30px}
+
+/* Footer */
+footer{text-align:center;padding:0 max(16px,env(safe-area-inset-right,0px)) 2rem max(16px,env(safe-area-inset-left,0px))}
+nav.foot{margin:1rem 0 1.5rem}
+footer p{text-align:center;margin:.4rem 0}
+footer .top{display:inline-block;margin:.5rem 0 1rem}
+.copybtn{font:inherit;font-size:.85rem;background:transparent;color:var(--cyan);border:1px solid var(--cyan);border-radius:999px;padding:.05rem .7rem;cursor:pointer;margin-left:.5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
